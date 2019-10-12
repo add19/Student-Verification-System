@@ -1,0 +1,9 @@
+const TRANSACTION_PER_BLOCK = 4;
+const NUMBER_OF_NODES = 3;
+const MIN_APPROVALS = 2 * (NUMBER_OF_NODES / 3) + 1;
+// const MIN_APPROVALS = 2;
+module.exports = {
+    TRANSACTION_PER_BLOCK,
+    NUMBER_OF_NODES, 
+    MIN_APPROVALS
+};

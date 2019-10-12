@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Express - Node.js POST data example</title>
+</head>
+
+<body>
+  <form action="/transact" method="POST">
+    <div class="form-row m-b-55">
+        <div class="name">Name</div>
+        <div class="value">
+            <div class="row row-space">
+                <div class="col-2">
+                    <div class="input-group-desc">
+                        <input class="input--style-5" type="text" name="first_name">
+                        <label class="label--desc">first name</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="input-group-desc">
+                        <input class="input--style-5" type="text" name="last_name">
+                        <label class="label--desc">last name</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="name">CPI</div>
+        <div class="value">
+            <div class="input-group">
+                <input class="input--style-5" type="text" name="cpi">
+            </div>
+        </div>
+    </div>
+    <div class="form-row m-b-55">
+        <div class="name">Unique Fields</div>
+        <div class="value">
+            <div class="row row-refine">
+                <div class="col-3">
+                    <div class="input-group-desc">
+                        <input class="input--style-5" type="text" name="bcode">
+                        <label class="label--desc">B Code</label>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="input-group-desc">
+                        <input class="input--style-5" type="text" name="prn">
+                        <label class="label--desc">PRN</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="name">Branch</div>
+        <div class="value">
+            <div class="input-group">
+                <div class="rs-select2 js-select-simple select--no-search">
+                    <select name="subject">
+                        <option disabled="disabled" selected="selected">Choose option</option>
+                        <option>CSE</option>
+                        <option>IT</option>
+                        <option>MECHANICAL</option>
+                        <option>CIVIL</option>
+                        <option>ELECTRONICS</option>
+                        <option>ELECTRICAL</option>
+                    </select>
+                    <div class="select-dropdown"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="form-group form-check">
+        <label class="form-check-label">
+          <input type="file" name="gradecardImage" required/>
+        </label>
+      </div> -->
+    <!-- <div class="form-row p-t-20">
+        <label class="label label--block">Are you an existing customer?</label>
+        <div class="p-t-15">
+            <label class="radio-container m-r-55">Yes
+                <input type="radio" checked="checked" name="exist">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio-container">No
+                <input type="radio" name="exist">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div> -->
+    <br>
+    <div>
+        <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+    </div>
+</form>
+</body>
+</html>
