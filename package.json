@@ -15,7 +15,7 @@
     "cloudinary": "^1.16.0",
     "connect-flash": "^0.1.1",
     "ejs": "^2.7.1",
-    "elliptic": "^6.5.1",
+    "elliptic": "^6.5.4",
     "express": "^4.17.1",
     "firebase": "^7.2.3",
     "jade": "^1.11.0",
