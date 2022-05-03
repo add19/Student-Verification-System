@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Input Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+           
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/edit">Update</a></li>
+        <li><a href="http://localhost:9004">Generate</a></li>
+        <li><a href="http://localhost:9004">Get PDF</a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+  <h2>Grade Data form</h2>
+  <form action="/input" method="POST">
+    <div class="form-group">
+      <label for="yop">Year of Passing:</label>
+      <input type="name" class="form-control" id="yop" placeholder="Enter Graduation Year" name="y_o_p">
+    </div>
+    <div class="form-group">
+      <label for="prn">PRN:</label>
+      <input type="text" class="form-control" id="prn" placeholder="Enter PRN" name="p_r_n">
+    </div>
+    
+    <div class="form-group">
+      <label for="branch">Branch:</label>
+      <input type="text" class="form-control" id="branch" placeholder="Enter Branch" name="branch">
+    </div>
+    
+    
+    <div class="form-group">
+      <label for="sem">Semester:</label>
+      <input type="text" class="form-control" id="sem" placeholder="Enter Semester" name="sem">
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-Mail address:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
+    </div>
+
+    <h1>Enter this Semester's details</h1>
+    <div class="form-group">
+      <label for="subject1">Subject 1:</label>
+      <input type="text" class="form-control" id="subject1" placeholder="Enter name of subject " name="subject1">
+    </div>
+    
+    <div class="form-group">
+      <label for="labcred_subject1">Credits for lab of Subject 1:</label>
+      <input type="text" class="form-control" id="labcred_subject1" placeholder="Enter total credits of subject " name="labcred_subject1">
+    </div>
+
+    <div class="form-group">
+      <label for="lcred_subject1">Credits for lecture of Subject 1:</label>
+      <input type="text" class="form-control" id="lcred_subject1" placeholder="Enter total credits of subject " name="lcred_subject1">
+    </div>
+
+    <div class="form-group">
+      <label for="tcred_subject1">Credits for tutorial of Subject 1:</label>
+      <input type="text" class="form-control" id="tcred_subject1" placeholder="Enter total credits of subject " name="tcred_subject1">
+    </div>
+    
+    <div class="form-group">
+      <label for="code1">Course Code of Subject 1:</label>
+      <input type="text" class="form-control" id="code1" placeholder="Enter Course code of subject " name="code1">
+    </div>
+    
+    <div class="form-group">
+      <label for="grade1">Grade obtained for Subject 1:</label>
+      <input type="text" class="form-control" id="grade1" placeholder="Enter grades obtained in subject" name="grade1">
+    </div>
+    
+    <div class="form-group">
+      <label for="subject2">Subject 2:</label>
+      <input type="text" class="form-control" id="subject2" placeholder="Enter name of subject " name="subject2">
+    </div>
+    
+    <div class="form-group">
+      <label for="labcred_subject2">Credits for lab of Subject 2:</label>
+      <input type="text" class="form-control" id="labcred_subject2" placeholder="Enter total credits of subject " name="labcred_subject2">
+    </div>
+
+    <div class="form-group">
+      <label for="lcred_subject2">Credits for lecture of Subject 2:</label>
+      <input type="text" class="form-control" id="lcred_subject2" placeholder="Enter total credits of subject " name="lcred_subject2">
+    </div>
+
+    <div class="form-group">
+      <label for="tcred_subject2">Credits for tutorial of Subject 2:</label>
+      <input type="text" class="form-control" id="tcred_subject2" placeholder="Enter total credits of subject " name="tcred_subject2">
+    
+    <div class="form-group">
+      <label for="code2">Course Code of Subject 2:</label>
+      <input type="text" class="form-control" id="code2" placeholder="Enter Course code of subject " name="code2">
+    </div>
+    
+    <div class="form-group">
+      <label for="grade2">Grade obtained for Subject 2:</label>
+      <input type="text" class="form-control" id="grade2" placeholder="Enter grades obtained in subject " name="grade2">
+    </div>
+    
+    <div class="form-group">
+      <label for="subject3">Subject 3:</label>
+      <input type="text" class="form-control" id="subject3" placeholder="Enter name of subject " name="subject3">
+    </div>
+    
+    <div class="form-group">
+      <label for="labcred_subject3">Credits for lab of Subject 3:</label>
+      <input type="text" class="form-control" id="labcred_subject3" placeholder="Enter total credits of subject " name="labcred_subject3">
+    </div>
+
+    <div class="form-group">
+      <label for="lcred_subject3">Credits for lecture of Subject 1:</label>
+      <input type="text" class="form-control" id="lcred_subject3" placeholder="Enter total credits of subject " name="lcred_subject3">
+    </div>
+
+    <div class="form-group">
+      <label for="tcred_subject3">Credits for tutorial of Subject 1:</label>
+      <input type="text" class="form-control" id="tcred_subject3" placeholder="Enter total credits of subject " name="tcred_subject3">
+    
+    <div class="form-group">
+      <label for="code3">Course Code of Subject 3:</label>
+      <input type="text" class="form-control" id="code3" placeholder="Enter Course code of subject" name="code3">
+    </div>
+    
+    <div class="form-group">
+      <label for="grade3">Grade obtained for Subject 3:</label>
+      <input type="text" class="form-control" id="grade3" placeholder="Enter grades obtained in subject " name="grade3">
+    </div>
+    
+    <div class="form-group">
+      <label for="subject4">Subject 4:</label>
+      <input type="text" class="form-control" id="subject4" placeholder="Enter name of subject " name="subject4">
+    </div>
+    
+    <div class="form-group">
+      <label for="labcred_subject4">Credits for lab of Subject 4:</label>
+      <input type="text" class="form-control" id="labcred_subject4" placeholder="Enter total credits of subject " name="labcred_subject4">
+    </div>
+
+    <div class="form-group">
+      <label for="lcred_subject4">Credits for lecture of Subject 4:</label>
+      <input type="text" class="form-control" id="lcred_subject4" placeholder="Enter total credits of subject " name="lcred_subject4">
+    </div>
+
+    <div class="form-group">
+      <label for="tcred_subject4">Credits for tutorial of Subject 4:</label>
+      <input type="text" class="form-control" id="tcred_subject4" placeholder="Enter total credits of subject " name="tcred_subject4">
+    
+    <div class="form-group">
+      <label for="code4">Course Code of Subject 4:</label>
+      <input type="text" class="form-control" id="code4" placeholder="Enter Course code of subject " name="code4">
+    </div>
+    
+    <div class="form-group">
+      <label for="grade4">Grade obtained for Subject 4:</label>
+      <input type="text" class="form-control" id="grade4" placeholder="Enter grades obtained in subject " name="grade4">
+    </div>
+    
+    <div class="form-group">
+      <label for="subject5">Subject 5:</label>
+      <input type="text" class="form-control" id="subject5" placeholder="Enter name of subject " name="subject5">
+    </div>
+    
+    <div class="form-group">
+      <label for="labcred_subject5">Credits for lab of Subject 5:</label>
+      <input type="text" class="form-control" id="labcred_subject5" placeholder="Enter total credits of subject " name="labcred_subject5">
+    </div>
+
+    <div class="form-group">
+      <label for="lcred_subject5">Credits for lecture of Subject 5:</label>
+      <input type="text" class="form-control" id="lcred_subject5" placeholder="Enter total credits of subject " name="lcred_subject5">
+    </div>
+
+    <div class="form-group">
+      <label for="tcred_subject5">Credits for tutorial of Subject 5:</label>
+      <input type="text" class="form-control" id="tcred_subject5" placeholder="Enter total credits of subject " name="tcred_subject5">    
+    <div class="form-group">
+      <label for="code5">Course Code of Subject 5:</label>
+      <input type="text" class="form-control" id="code5" placeholder="Enter Course code of subject " name="code5">
+    </div>
+    
+    <div class="form-group">
+      <label for="grade5">Grade obtained for Subject 5:</label>
+      <input type="text" class="form-control" id="grade5" placeholder="Enter grades obtained in subject" name="grade5">
+    </div>
+    
+    <div class="form-group">
+      <label for="subject6">Subject 6:</label>
+      <input type="text" class="form-control" id="subject6" placeholder="Enter name of subject " name="subject6">
+    </div>
+    
+    <div class="form-group">
+      <label for="labcred_subject6">Credits for lab of Subject 6:</label>
+      <input type="text" class="form-control" id="labcred_subject6" placeholder="Enter total credits of subject " name="labcred_subject6">
+    </div>
+
+    <div class="form-group">
+      <label for="lcred_subject6">Credits for lecture of Subject 6:</label>
+      <input type="text" class="form-control" id="lcred_subject6" placeholder="Enter total credits of subject " name="lcred_subject6">
+    </div>
+
+    <div class="form-group">
+      <label for="tcred_subject6">Credits for tutorial of Subject 6:</label>
+      <input type="text" class="form-control" id="tcred_subject6" placeholder="Enter total credits of subject " name="tcred_subject6">
+    
+    <div class="form-group">
+      <label for="code6">Course Code of Subject 6:</label>
+      <input type="text" class="form-control" id="code6" placeholder="Enter Course code of subject" name="code6">
+    </div>
+    
+    <div class="form-group">
+      <label for="grade6">Grade obtained for Subject 6:</label>
+      <input type="text" class="form-control" id="grade6" placeholder="Enter grades obtained in subject" name="grade6">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>  
+
+</body>
+</html>

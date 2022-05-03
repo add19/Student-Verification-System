@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Transcript Data Edit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+           
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/edit">Update</a></li>
+            <li><a href="http://localhost:9004">Generate</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+          </ul>
+        </div>
+      </nav>
+<div class="container">
+  <h2>Edit details of Student</h2>
+  <form action="/update" method="POST">
+    <div class="form-group">
+      <label for="passing">Year of Passing:</label>
+      <input type="name" class="form-control" id="passing" placeholder="Enter Graduation Year" name="passing">
+    </div>
+    <div class="form-group">
+      <label for="roll">PRN:</label>
+      <input type="text" class="form-control" id="roll" placeholder="Enter PRN" name="roll">
+    </div>
+    
+    <div class="form-group">
+      <label for="sem">Semester:</label>
+      <input type="text" class="form-control" id="sem" placeholder="Enter Branch" name="sem">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>  
+
+</body>
+</html>

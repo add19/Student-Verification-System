@@ -1,0 +1,8 @@
+*~
+.*~
+\#*\#
+.\#*
+dist/*
+test/config.js
+node-pdfcrowd.tgz
+test_files

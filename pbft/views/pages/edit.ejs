@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+         
+</head>
+<body>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/edit">Update</a></li>
+        <li><a href="http://localhost:9004">Generate</a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+  <h2>Edit Data</h2>
+  <form action="/input" method="POST">
+    <div class="form-group">
+        <label for="yop">Year of Passing:</label>
+        <input type="name" class="form-control" id="yop" placeholder="Enter Graduation Year" name="y_o_p">
+    </div>
+        <div class="form-group">
+        <label for="prn">PRN:</label>
+        <input type="text" class="form-control" id="prn" placeholder="Enter PRN" name="p_r_n">
+    </div>
+        
+        <div class="form-group">
+        <label for="branch">Branch:</label>
+        <input type="text" class="form-control" id="branch" placeholder="Enter Branch" name="branch">
+    </div>
+    
+    <div class="form-group">
+      <label for="sem">Semester:</label>
+      <input type="text" class="form-control" id="sem" placeholder="Enter Branch" name="sem">
+    </div>
+    
+    <% var i =1;%>
+    <% subjectInfo.forEach(function(subject) { %>
+        <div class="form-group">
+            <label for="subject<%=i%>">Subject <%=i%>:</label>
+            <input type="text" class="form-control" id="subject<%=i%>" name="subject<%=i%>" value="<%=subject.course_title%>">
+        </div>
+
+        <div class="form-group">
+            <label for="labcred_subject<%=i%>">Credits for lab of Subject <%=i%>:</label>
+            <input type="text" class="form-control" id="labcred_subject<%=i%>" name="labcred_subject<%=i%>" value="<%=subject.credits.lab%>">
+        </div>
+
+        <div class="form-group">
+            <label for="lcred_subject<%=i%>">Credits for lecture of Subject <%=i%>:</label>
+            <input type="text" class="form-control" id="lcred_subject<%=i%>" name="lcred_subject<%=i%>" value="<%=subject.credits.lect%>">
+        </div>
+
+        <div class="form-group">
+            <label for="tcred_subject<%=i%>">Credits for tutorial of Subject <%=i%>:</label>
+            <input type="text" class="form-control" id="tcred_subject<%=i%>" name="tcred_subject<%=i%>" value="<%=subject.credits.tut%>">
+        </div>
+
+        <div class="form-group">
+            <label for="code<%=i%>">Course Code of Subject <%=i%>:</label>
+            <input type="text" class="form-control" id="code<%=i%>" name="code<%=i%>" value="<%=subject.course_code%>">
+        </div>
+
+        <div class="form-group">
+            <label for="grade<%=i%>">Grade obtained for Subject <%=i%>:</label>
+            <input type="text" class="form-control" id="grade<%=i%>" placeholder="Enter grades obtained in subject" name="grade<%=i%>" value="<%=subject.grade%>">
+        </div>
+        <% i=i+1; %>
+    <% }) %>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>  
+
+</body>
+</html>

@@ -5,6 +5,7 @@ const {MIN_APPROVALS} = require("./Config");
 const p2p_port = process.env.P2P_PORT || 5001;
 
 const peers = process.env.PEERS ? process.env.PEERS.split(",") : [];
+var CircularJSON = require('circular-json');
 
 const MESSAGE_TYPE = {
     transaction: "TRANSACTION",
@@ -58,7 +59,7 @@ class P2PServer{
 
     sendTransaction(socket, transaction){
         socket.send(
-            JSON.stringify({
+            CircularJSON.stringify({
                 type: MESSAGE_TYPE.transaction,
                 transaction: transaction
             })
@@ -73,7 +74,7 @@ class P2PServer{
 
     sendPrePrepare(socket, block){
         socket.send(
-            JSON.stringify({
+            CircularJSON.stringify({
                 type: MESSAGE_TYPE.pre_prepare,
                 block: block
             })
@@ -88,7 +89,7 @@ class P2PServer{
     
     sendPrepare(socket, prepare){
         socket.send(
-            JSON.stringify({
+            CircularJSON.stringify({
                 type: MESSAGE_TYPE.prepare,
                 prepare: prepare
             })
@@ -103,7 +104,7 @@ class P2PServer{
     
     sendCommit(socket, commit){
         socket.send(
-            JSON.stringify({
+            CircularJSON.stringify({
             type: MESSAGE_TYPE.commit,
             commit: commit
             })
@@ -118,7 +119,7 @@ class P2PServer{
     
     sendRoundChange(socket, message){
         socket.send(
-            JSON.stringify({
+            CircularJSON.stringify({
             type: MESSAGE_TYPE.round_change,
             message: message
             })
@@ -145,7 +146,7 @@ class P2PServer{
                             if(this.blockchain.getProposer() === this.wallet.getPublicKey()){
                                 console.log("Proposing block...");
 
-                                var block = this.blockchain.createBlock(this.transactionPool.transactions, this.wallet);
+                                var block = this.blockchain.createBlock(this.transactionPool.transactions, this.wallet, this.transactionPool.tree.rootNode.data, this.transactionPool.filter);
                                 console.log("Block created...");
                                 this.broadcastPrePrepare(block);
                             }

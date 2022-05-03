@@ -116,7 +116,7 @@ class MerkleTree{
     }
     TreeTraversal(){
         for(var i=0; i<this.nodes.length; i++){
-            console.log(this.nodes[i]);
+            console.log(this.nodes[i].data);
         }
     }
 }
@@ -126,22 +126,38 @@ var txn1 = 't1';
 var txn2 = 't2';
 var txn3 = 't3';
 var txn4 = 't4';
+var txn5 = 't5';
+var txn6 = 't6';
+var txn7 = 't7';
+var txn8 = 't8';
 var merkleHash = new MerkleHash();
-hash1 = merkleHash.ComputeHash(txn1);
-hash2 = merkleHash.ComputeHash(txn2);
-hash3 = merkleHash.ComputeHash(txn3);
-hash4 = merkleHash.ComputeHash(txn4);
+var hash1 = merkleHash.ComputeHash(txn1);
+var hash2 = merkleHash.ComputeHash(txn2);
+var hash3 = merkleHash.ComputeHash(txn3);
+var hash4 = merkleHash.ComputeHash(txn4);
+var hash5 = merkleHash.ComputeHash(txn5);
+var hash6 = merkleHash.ComputeHash(txn6);
+var hash7 = merkleHash.ComputeHash(txn7);
+var hash8 = merkleHash.ComputeHash(txn8);
 tree.AppendHash(hash1);
 tree.AppendHash(hash2);
 tree.AppendHash(hash3);
 tree.AppendHash(hash4);
+tree.AppendHash(hash5);
+tree.AppendHash(hash6);
+tree.AppendHash(hash7);
+tree.AppendHash(hash8);
 tree.ConstructTree();
 // console.log(tree.rootNode);
 tree.TreeTraversal();
 console.log("====================================================================================");
-console.log("Merkle Proof of Transaction: " + txn3);
-var trail = tree.AuditProof(hash3);
-var currentHash = hash3;
+console.log("Merkle Proof of Transaction: " + txn7);
+var trail = tree.AuditProof(hash7);
+var currentHash = hash7;
+console.log(trail);
+for(var i=0; i<trail.length; i++){
+    console.log(trail[i].data);
+}
 for(var i=0; i<trail.length; i++){
     // console.log(trail[i].data + " " + trail[i].direction);
     if(trail[i].direction == 'left'){

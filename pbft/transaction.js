@@ -4,7 +4,7 @@ class Transaction{
     constructor(data, wallet){
         this.id = ChainUtil.getId();
         this.from = wallet.publicKey;
-        this.inputData = {data: data, timestamp: Date.now()};
+        this.inputData = {data: data};
         this.hash = ChainUtil.getHash(this.inputData);
         this.signature = wallet.sign(this.hash);
     }

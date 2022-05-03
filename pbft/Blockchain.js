@@ -1,6 +1,7 @@
 const {NUMBER_OF_NODES} = require("./Config");
 
 const Block = require("./Block");
+const blockchain = require("./models/blockchain");
 
 class Blockchain{
     constructor(validators){
@@ -10,11 +11,18 @@ class Blockchain{
 
     addBlock(block){
         this.chain.push(block);
+        blockchain.create(block, function(err, blockAdded){
+            if(err){
+                console.log(err);
+            }else{
+                console.log("Following block has been added successflly: " + blockAdded);
+            }
+        });
         console.log("Block added...");
     }
 
-    createBlock(transactions, wallet){
-        var block = Block.createBlock(this.chain[this.chain.length - 1], transactions, wallet);
+    createBlock(transactions, wallet, merkleTree, bloomFilter){
+        var block = Block.createBlock(this.chain[this.chain.length - 1], transactions, wallet, merkleTree, bloomFilter);
         return block;
     }
     getProposer(){

@@ -2,7 +2,7 @@ const SHA256 = require("sha256");
 const ChainUtil = require("./ChainUtil");
 
 class Block{
-    constructor(timestamp, previousHash, currentHash, data, blockProposer, signature, sequenceNo){
+    constructor(timestamp, previousHash, currentHash, data, blockProposer, signature, sequenceNo, merkleRoot, bloomFilter){
         this.timestamp = timestamp;
         this.currentHash = currentHash;
         this.previousHash = previousHash;
@@ -10,6 +10,8 @@ class Block{
         this.blockProposer = blockProposer;
         this.signature = signature;
         this.sequenceNo = sequenceNo;
+        this.merkleRoot = merkleRoot;
+        this.bloomFilter = bloomFilter;
     }
 
 
@@ -21,7 +23,9 @@ class Block{
             Data        : ${this.data}
             proposer    : ${this.blockProposer}
             Signature   : ${this.signature}
-            Sequence No : ${this.sequenceNo}`;
+            Sequence No : ${this.sequenceNo}
+            MerkleRoot  : ${this.merkleRoot}
+            BloomFilter : ${this.bloomFilter}`;
     }
 
     static getGenesisBlock(){
@@ -36,7 +40,7 @@ class Block{
         );
     }
 
-    static createBlock(previousBlock, data, wallet){
+    static createBlock(previousBlock, data, wallet, merkleRoot, bloomFilter){
         var hash;
         var timestamp = Date.now();
         var previousHash = previousBlock.hash;
@@ -51,7 +55,9 @@ class Block{
             data,
             blockProposer,
             signature,
-            previousBlock.sequenceNo + 1
+            previousBlock.sequenceNo + 1,
+            merkleRoot,
+            bloomFilter
         );  
     }
 
